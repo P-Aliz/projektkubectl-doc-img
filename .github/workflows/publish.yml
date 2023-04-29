@@ -13,6 +13,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build the node app Docker image
         run:
-          docker build . --tag https://github.com/P-Aliz/projektkubectl-doc-img:latest
-          docker run https://github.com/P-Aliz/projektkubectl-doc-img
-          docker push ghttps://github.com/P-Aliz/projektkubectl-doc-img
+          docker build . --tag ghcr.io/p-aliz/projektkubectl-doc-img:latest
+          docker run ghcr.io/p-aliz/projektkubectl-doc-img
+          docker push ghcr.io/p-aliz/projektkubectl-doc-img
