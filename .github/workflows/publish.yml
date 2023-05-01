@@ -1,5 +1,6 @@
 name: publish
-on: [push]
+on:
+  push:
 jobs:
   publish-node-docker-image:
     runs-on: ubuntu-latest
@@ -12,7 +13,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build the node app Docker image
-        run:
+        run: |
           docker build -t ghcr.io/p-aliz/projektkubectl-doc-img:latest .
           docker run ghcr.io/p-aliz/projektkubectl-doc-img
           docker push ghcr.io/p-aliz/projektkubectl-doc-img
